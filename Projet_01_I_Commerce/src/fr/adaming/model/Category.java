@@ -1,10 +1,15 @@
 package fr.adaming.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +27,10 @@ public class Category {
 	
 	@Column(name="description_cat")
 	private String description;
+	
+	// Transform UML to Java Association
+	@OneToMany(mappedBy="orderLine", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
+	private List<Article> articles;
 
 	// Constructors
 	public Category() {
@@ -65,8 +74,14 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 	
 }
 	

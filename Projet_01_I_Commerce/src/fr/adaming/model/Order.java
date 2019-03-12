@@ -29,7 +29,58 @@ public class Order {
 	@ManyToOne
 	@JoinColumn(name="id_ol_art", referencedColumnName="id_ol")
 	private OrderLine orderLine;
+
+	// Constructor
+	public Order() {
+		super();
+	}
+
+	public Order(String adress, Customer customer, OrderLine orderLine) {
+		super();
+		this.adress = adress;
+		this.customer = customer;
+		this.orderLine = orderLine;
+	}
+
+	public Order(int id, String adress, Customer customer, OrderLine orderLine) {
+		super();
+		this.id = id;
+		this.adress = adress;
+		this.customer = customer;
+		this.orderLine = orderLine;
+	}
+
+	// Getters & Setters
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public OrderLine getOrderLine() {
+		return orderLine;
+	}
+
+	public void setOrderLine(OrderLine orderLine) {
+		this.orderLine = orderLine;
+	}
 	
-
-
 }

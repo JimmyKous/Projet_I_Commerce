@@ -1,5 +1,9 @@
 package fr.adaming.Service;
 
-public class IAdminService {
+import fr.adaming.model.Admin;
+
+public interface IAdminService {
+	
+	public Admin isExist(Admin ad);
 
 }

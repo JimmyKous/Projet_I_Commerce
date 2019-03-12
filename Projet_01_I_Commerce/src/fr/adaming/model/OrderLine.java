@@ -33,4 +33,68 @@ public class OrderLine {
 	
 	@OneToMany(mappedBy="orderLine", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
 	private List<Order> orders;
+
+	// Constructors
+	public OrderLine() {
+		super();
+	}
+
+	public OrderLine(int qtyOL, double priceOL, List<Article> articles, List<Order> orders) {
+		super();
+		this.qtyOL = qtyOL;
+		this.priceOL = priceOL;
+		this.articles = articles;
+		this.orders = orders;
+	}
+
+	public OrderLine(int idOL, int qtyOL, double priceOL, List<Article> articles, List<Order> orders) {
+		super();
+		this.idOL = idOL;
+		this.qtyOL = qtyOL;
+		this.priceOL = priceOL;
+		this.articles = articles;
+		this.orders = orders;
+	}
+
+	// Getters & Setters
+	public int getIdOL() {
+		return idOL;
+	}
+
+	public void setIdOL(int idOL) {
+		this.idOL = idOL;
+	}
+
+	public int getQtyOL() {
+		return qtyOL;
+	}
+
+	public void setQtyOL(int qtyOL) {
+		this.qtyOL = qtyOL;
+	}
+
+	public double getPriceOL() {
+		return priceOL;
+	}
+
+	public void setPriceOL(double priceOL) {
+		this.priceOL = priceOL;
+	}
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+	
 }
