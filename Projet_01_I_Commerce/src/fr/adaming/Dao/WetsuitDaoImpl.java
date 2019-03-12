@@ -1,5 +1,5 @@
 package fr.adaming.Dao;
 
-public class WetSuitDaoImpl {
+public class WetsuitDaoImpl {
 
 }

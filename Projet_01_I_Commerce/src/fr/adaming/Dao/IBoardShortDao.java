@@ -6,6 +6,10 @@ import fr.adaming.model.Boardshort;
 
 public interface IBoardShortDao {
 	
-	public List<Boardshort> getListeB ();
+	public List<Boardshort> getListBoardshort ();
+	public Boardshort addBoardshort (Boardshort b);
+	public int deleteBoardshort (Boardshort b);
+	public int updateBoardshort (Boardshort b);
+	public Boardshort getBoardshortById (Boardshort b);
 
 }
