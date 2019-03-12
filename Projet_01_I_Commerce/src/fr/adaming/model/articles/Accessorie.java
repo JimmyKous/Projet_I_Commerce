@@ -1,4 +1,4 @@
-package fr.adaming.model;
+package fr.adaming.model.articles;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

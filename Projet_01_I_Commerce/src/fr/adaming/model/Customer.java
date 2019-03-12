@@ -22,6 +22,9 @@ public class Customer {
 		
 		@Column(name="pw_c")
 		private String mail;
+		
+		@Column(name="adress_c")
+		private String adress;
 
 		public Customer() {
 			super();

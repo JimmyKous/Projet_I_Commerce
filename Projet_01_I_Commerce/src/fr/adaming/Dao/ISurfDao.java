@@ -2,7 +2,7 @@ package fr.adaming.Dao;
 
 import java.util.List;
 
-import fr.adaming.model.Surf;
+import fr.adaming.model.articles.Surf;
 
 public interface ISurfDao {
 	public List<Surf> getListSurf ();

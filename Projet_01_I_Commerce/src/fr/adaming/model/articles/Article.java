@@ -1,4 +1,4 @@
-package fr.adaming.model;
+package fr.adaming.model.articles;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +9,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import fr.adaming.model.Order;
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)

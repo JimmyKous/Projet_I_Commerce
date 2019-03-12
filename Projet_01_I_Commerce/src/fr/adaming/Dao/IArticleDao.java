@@ -1,6 +1,6 @@
 package fr.adaming.Dao;
 
-import fr.adaming.model.Article;
+import fr.adaming.model.articles.Article;
 
 public interface IArticleDao {
 	

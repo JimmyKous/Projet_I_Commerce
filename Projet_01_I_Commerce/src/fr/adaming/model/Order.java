@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import fr.adaming.model.articles.Article;
+
 @Entity
 @Table(name="orders")
 public class Order {

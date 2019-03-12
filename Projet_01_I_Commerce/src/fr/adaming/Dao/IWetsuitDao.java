@@ -2,7 +2,7 @@ package fr.adaming.Dao;
 
 import java.util.List;
 
-import fr.adaming.model.Wetsuit;
+import fr.adaming.model.articles.Wetsuit;
 
 public interface IWetsuitDao {
 
