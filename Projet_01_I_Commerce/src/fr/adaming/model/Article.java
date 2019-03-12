@@ -41,5 +41,94 @@ public abstract class Article {
 	@ManyToOne
 	@JoinColumn(name="o_id", referencedColumnName="id_o")
 	private Order order;
+
+	public Article() {
+		super();
+	}
+
+	public Article(String itemName, String description, double price, int stock, int qty, byte[] pic) {
+		super();
+		this.itemName = itemName;
+		this.description = description;
+		this.price = price;
+		this.stock = stock;
+		this.qty = qty;
+		this.pic = pic;
+	}
+
+	public Article(int ref, String itemName, String description, double price, int stock, int qty, byte[] pic) {
+		super();
+		this.ref = ref;
+		this.itemName = itemName;
+		this.description = description;
+		this.price = price;
+		this.stock = stock;
+		this.qty = qty;
+		this.pic = pic;
+	}
+
+	public int getRef() {
+		return ref;
+	}
+
+	public void setRef(int ref) {
+		this.ref = ref;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public int getQty() {
+		return qty;
+	}
+
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+
+	public byte[] getPic() {
+		return pic;
+	}
+
+	public void setPic(byte[] pic) {
+		this.pic = pic;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 	
 }
