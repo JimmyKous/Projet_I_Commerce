@@ -10,26 +10,38 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="orders")
-public class Order {
-
+@Table(name="articles")
+public class Article {
+	
+	// Attributes
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_o")
-	private int id;
+	@Column(name="id_art")
+	private int idArt;
 	
-	@Column(name="adress_o")
-	private String adress;
+	@Column(name="designation_art")
+	private String designation;
+	
+	@Column(name="description_art")
+	private String description;
+	
+	@Column(name="price_art")
+	private double price;
+	
+	@Column(name="stock_art")
+	private String stock;
+	
+	@Column(name="picture_art")
+	private byte[] picture;
 	
 	// Transform UML to Java Association
 	@ManyToOne
-	@JoinColumn(name="c_id", referencedColumnName="id_c")
-	private Customer customer;
-
+	@JoinColumn(name="id_cat_art", referencedColumnName="id_cat")
+	private Category category;
+	
 	@ManyToOne
 	@JoinColumn(name="id_ol_art", referencedColumnName="id_ol")
 	private OrderLine orderLine;
 	
-
-
+	
 }
