@@ -27,6 +27,8 @@ public class Admin {
 	public Admin() {
 		super();
 	}
+	
+	
 
 	public Admin(String mail, String pw) {
 		super();
