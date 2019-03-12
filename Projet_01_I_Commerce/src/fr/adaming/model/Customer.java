@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity // Persistant Entity
-@Table(name="admins") // Table Name
+@Table(name="customers") // Table Name
 public class Customer {
 
 	// Attributes

@@ -27,8 +27,6 @@ public class Admin {
 	public Admin() {
 		super();
 	}
-	
-	
 
 	public Admin(String mail, String pw) {
 		super();
@@ -67,7 +65,8 @@ public class Admin {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-
+	
+	// toString
 	@Override
 	public String toString() {
 		return "Admin [id=" + id + ", mail=" + mail + ", pw=" + pw + "]";
