@@ -1,12 +1,17 @@
 package fr.adaming.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,28 +31,27 @@ public class Order {
 	@JoinColumn(name="c_id", referencedColumnName="id_c")
 	private Customer customer;
 
-	@ManyToOne
-	@JoinColumn(name="id_ol_art", referencedColumnName="id_ol")
-	private OrderLine orderLine;
+	@OneToMany(mappedBy="order", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
+	private List<OrderLine> orderLines;
 
 	// Constructor
 	public Order() {
 		super();
 	}
 
-	public Order(String adress, Customer customer, OrderLine orderLine) {
+	public Order(String adress, Customer customer, List<OrderLine> orderLines) {
 		super();
 		this.adress = adress;
 		this.customer = customer;
-		this.orderLine = orderLine;
+		this.orderLines = orderLines;
 	}
 
-	public Order(int id, String adress, Customer customer, OrderLine orderLine) {
+	public Order(int id, String adress, Customer customer, List<OrderLine> orderLines) {
 		super();
 		this.id = id;
 		this.adress = adress;
 		this.customer = customer;
-		this.orderLine = orderLine;
+		this.orderLines = orderLines;
 	}
 
 	// Getters & Setters
@@ -75,12 +79,12 @@ public class Order {
 		this.customer = customer;
 	}
 
-	public OrderLine getOrderLine() {
-		return orderLine;
+	public List<OrderLine> getOrderLines() {
+		return orderLines;
 	}
 
-	public void setOrderLine(OrderLine orderLine) {
-		this.orderLine = orderLine;
+	public void setOrderLines(List<OrderLine> orderLines) {
+		this.orderLines = orderLines;
 	}
 	
 }

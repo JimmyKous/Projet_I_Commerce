@@ -48,7 +48,7 @@ public class Article {
 	}
 
 	public Article(String designation, String description, double price, String stock, byte[] picture,
-			Category category, OrderLine orderLine) {
+			Category category) {
 		super();
 		this.designation = designation;
 		this.description = description;
@@ -56,11 +56,10 @@ public class Article {
 		this.stock = stock;
 		this.picture = picture;
 		this.category = category;
-		this.orderLine = orderLine;
 	}
 
 	public Article(int idArt, String designation, String description, double price, String stock, byte[] picture,
-			Category category, OrderLine orderLine) {
+			Category category) {
 		super();
 		this.idArt = idArt;
 		this.designation = designation;
@@ -69,7 +68,6 @@ public class Article {
 		this.stock = stock;
 		this.picture = picture;
 		this.category = category;
-		this.orderLine = orderLine;
 	}
 
 	public int getIdArt() {

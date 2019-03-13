@@ -40,6 +40,13 @@ public class Customer {
 		super();
 	}
 
+	public Customer(String name, String mail, String adress) {
+		super();
+		this.name = name;
+		this.mail = mail;
+		this.adress = adress;
+	}
+
 	public Customer(String name, String mail, String adress, List<Order> orders) {
 		super();
 		this.name = name;

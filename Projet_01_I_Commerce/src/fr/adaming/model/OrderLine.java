@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -31,29 +33,30 @@ public class OrderLine {
 	@OneToMany(mappedBy="orderLine", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
 	private List<Article> articles;
 	
-	@OneToMany(mappedBy="orderLine", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
-	private List<Order> orders;
+	@ManyToOne
+	@JoinColumn(name="id_o_ol", referencedColumnName="id_o")
+	private Order order;
 
 	// Constructors
 	public OrderLine() {
 		super();
 	}
 
-	public OrderLine(int qtyOL, double priceOL, List<Article> articles, List<Order> orders) {
+	public OrderLine(int qtyOL, double priceOL, List<Article> articles, Order order) {
 		super();
 		this.qtyOL = qtyOL;
 		this.priceOL = priceOL;
 		this.articles = articles;
-		this.orders = orders;
+		this.order = order;
 	}
 
-	public OrderLine(int idOL, int qtyOL, double priceOL, List<Article> articles, List<Order> orders) {
+	public OrderLine(int idOL, int qtyOL, double priceOL, List<Article> articles, Order order) {
 		super();
 		this.idOL = idOL;
 		this.qtyOL = qtyOL;
 		this.priceOL = priceOL;
 		this.articles = articles;
-		this.orders = orders;
+		this.order = order;
 	}
 
 	// Getters & Setters
@@ -89,12 +92,12 @@ public class OrderLine {
 		this.articles = articles;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
+	public Order getOrder() {
+		return order;
 	}
 
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
+	public void setOrders(Order order) {
+		this.order = order;
 	}
 	
 }

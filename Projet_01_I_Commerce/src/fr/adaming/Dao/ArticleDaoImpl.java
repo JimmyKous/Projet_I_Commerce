@@ -27,7 +27,7 @@ public class ArticleDaoImpl implements IArticleDao {
 	public int updateArticle(Article a) {
 		// JPQL Request
 		String req = "UPDATE Article AS a SET a.designation=:pDesignation, a.description=:pDescription,"
-				+ " a.price=:pPrice, a.stock=:pStock, a.picture=:pPicture WHERE a.idArt=:pId ";
+				+ " a.price=:pPrice, a.stock=:pStock, a.picture=:pPicture WHERE a.idArt=:pIdArt ";
 		
 		// Instanciate Query Object
 		Query query = em.createQuery(req);
@@ -38,7 +38,7 @@ public class ArticleDaoImpl implements IArticleDao {
 		query.setParameter("pPrice", a.getPrice());
 		query.setParameter("pStock", a.getStock());
 		query.setParameter("pPicture", a.getPicture());
-		query.setParameter("pId", a.getIdArt());
+		query.setParameter("pIdArt", a.getIdArt());
 		
 		return query.executeUpdate();
 	}
