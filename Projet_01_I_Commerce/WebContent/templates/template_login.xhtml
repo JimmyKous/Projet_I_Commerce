@@ -11,22 +11,24 @@
 </h:head>
 
 <h:body>
-<ui:composition>
-	<h:outputStylesheet library="css" name="login.css" />
-	<h:form styleClass="body">
+	<ui:composition>
 		<h:outputStylesheet library="css" name="login.css" />
-		<div class="login">
-			Login
-			<h:inputText value="#{csMB.conseiller.mail}" />
+		<div class="container">
+			<h:form styleClass="body">
+				<h:outputStylesheet library="css" name="login.css" />
+				<div class="login">Login</div>
+				<div class="inputText">
+					<h:inputText value="#{csMB.conseiller.mail}" />
+				</div>
+				<div class="mdp">Password</div>
+				<div class="inputText">
+					<h:inputSecret value="#{csMB.conseiller.mdp}" />
+				</div>
+				<div class="button">
+					<input type="" value="Input Button"/>
+				</div>
+			</h:form>
 		</div>
-		<div class="mdp">
-			Password
-			<h:inputSecret value="#{csMB.conseiller.mdp}" />
-		</div>
-		<div class="button">
-			<h:commandButton value="se connecter" action="#{csMB.seConnecter}"></h:commandButton>
-		</div>
-	</h:form>F
 	</ui:composition>
 </h:body>
 </html>
