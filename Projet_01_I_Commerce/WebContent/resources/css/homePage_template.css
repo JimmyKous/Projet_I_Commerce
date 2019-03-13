@@ -1,5 +1,6 @@
 #body{
 	background-image:url("../resources/Images/chicamaLineUp.jpg");
-
-	background-size: 100%;
+	background-size:100%;
+	background-repeat:no-repeat;
+	z-index: auto;
 }
