@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="htpp://primefaces.org/ui">
+
+<h:head>
+	<title>Facelet login</title>
+</h:head>
+
+<h:body>
+	<h:form>
+Login: <h:inputText value="#{aMB.formateur.mail}" />
+		<br />
+Mot de Passe <h:inputSecret value="#{aMB.admin.pw}" />
+		<br />
+		<h:commandButton value="se connecter" action="#{aMB.seConnecter}"></h:commandButton>
+		<h:messages style="color:red;text-align:center" />
+	</h:form>
+</h:body>
+</html>
