@@ -22,14 +22,14 @@ public class Category {
 	@Column(name="id_cat")
 	private int idCat;
 	
-	@Column(name="Name_cat")
+	@Column(name="name_cat")
 	private String categoryName;
 	
 	@Column(name="description_cat")
 	private String description;
 	
 	// Transform UML to Java Association
-	@OneToMany(mappedBy="orderLine", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="category", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
 	private List<Article> articles;
 
 	// Constructors

@@ -1,17 +1,13 @@
 package fr.adaming.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,8 +26,9 @@ public class OrderLine {
 	private double priceOL;
 	
 	// Transform UML to Java Association
-	@OneToMany(mappedBy="orderLine", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
-	private List<Article> articles;
+	@OneToOne
+	@JoinColumn(name="id_art_ol", referencedColumnName="id_art")
+	private Article article;
 	
 	@ManyToOne
 	@JoinColumn(name="id_o_ol", referencedColumnName="id_o")
@@ -42,20 +39,20 @@ public class OrderLine {
 		super();
 	}
 
-	public OrderLine(int qtyOL, double priceOL, List<Article> articles, Order order) {
+	public OrderLine(int qtyOL, double priceOL, Article article, Order order) {
 		super();
 		this.qtyOL = qtyOL;
 		this.priceOL = priceOL;
-		this.articles = articles;
+		this.article = article;
 		this.order = order;
 	}
 
-	public OrderLine(int idOL, int qtyOL, double priceOL, List<Article> articles, Order order) {
+	public OrderLine(int idOL, int qtyOL, double priceOL, Article article, Order order) {
 		super();
 		this.idOL = idOL;
 		this.qtyOL = qtyOL;
 		this.priceOL = priceOL;
-		this.articles = articles;
+		this.article = article;
 		this.order = order;
 	}
 
@@ -84,12 +81,12 @@ public class OrderLine {
 		this.priceOL = priceOL;
 	}
 
-	public List<Article> getArticles() {
-		return articles;
+	public Article getArticle() {
+		return article;
 	}
 
-	public void setArticles(List<Article> articles) {
-		this.articles = articles;
+	public void setArticle(Article article) {
+		this.article = article;
 	}
 
 	public Order getOrder() {

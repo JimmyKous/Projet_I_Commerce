@@ -15,7 +15,6 @@ public class CategoryDaoImpl implements ICategoryDao {
 	@PersistenceContext(unitName="PU_I_Commerce")
 	private EntityManager em;
 	
-	
 	@Override
 	public Category createCategory(Category c) {
 		em.persist(c);

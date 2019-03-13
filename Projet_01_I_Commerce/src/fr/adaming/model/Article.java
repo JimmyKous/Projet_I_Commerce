@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -39,8 +40,7 @@ public class Article {
 	@JoinColumn(name="id_cat_art", referencedColumnName="id_cat")
 	private Category category;
 	
-	@ManyToOne
-	@JoinColumn(name="id_ol_art", referencedColumnName="id_ol")
+	@OneToOne(mappedBy="article")
 	private OrderLine orderLine;
 
 	public Article() {
