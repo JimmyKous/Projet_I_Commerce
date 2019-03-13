@@ -2,12 +2,14 @@ package fr.adaming.Dao;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import fr.adaming.model.OrderLine;
 
+@Stateless
 public class OrderLineDaoImpl implements IOrderLineDao {
 
 	// This annotation allows to inject an EntityManager instantiated by EJB Container

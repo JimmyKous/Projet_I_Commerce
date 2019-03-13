@@ -1,11 +1,13 @@
 package fr.adaming.Service;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateful;
 
 import fr.adaming.Dao.ArticleDaoImpl;
 import fr.adaming.Dao.IArticleDao;
 import fr.adaming.model.Article;
 
+@Stateful
 public class ArticleServiceImpl implements IArticleService {
 	
 	// Transform UML to Java Association

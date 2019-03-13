@@ -1,11 +1,13 @@
 package fr.adaming.Dao;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import fr.adaming.model.Customer;
 
+@Stateless
 public class CustomerDaoImpl implements ICustomerDao {
 
 	// This annotation allows to inject an EntityManager instantiated by EJB

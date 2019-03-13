@@ -2,8 +2,11 @@ package fr.adaming.Service;
 
 import java.util.List;
 
+import javax.ejb.Local;
+
 import fr.adaming.model.OrderLine;
 
+@Local
 public interface IOrderLineService {
 	
 	public OrderLine addOrderLine(OrderLine ol);

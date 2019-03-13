@@ -1,7 +1,10 @@
 package fr.adaming.Dao;
 
+import javax.ejb.Local;
+
 import fr.adaming.model.Customer;
 
+@Local
 public interface ICustomerDao {
 
 	public Customer addCustomer(Customer c);

@@ -1,11 +1,13 @@
 package fr.adaming.Service;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateful;
 
 import fr.adaming.Dao.CustomerDaoImpl;
 import fr.adaming.Dao.ICustomerDao;
 import fr.adaming.model.Customer;
 
+@Stateful
 public class CustomerServiceImpl implements ICustomerService {
 	
 	// Transform UML to Java Association

@@ -2,8 +2,11 @@ package fr.adaming.Dao;
 
 import java.util.List;
 
+import javax.ejb.Local;
+
 import fr.adaming.model.OrderLine;
 
+@Local
 public interface IOrderLineDao {
 	
 	public OrderLine addOrderLine(OrderLine ol);

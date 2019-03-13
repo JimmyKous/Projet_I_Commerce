@@ -3,11 +3,13 @@ package fr.adaming.Service;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateful;
 
 import fr.adaming.Dao.IOrderDao;
 import fr.adaming.Dao.OrderDaoImpl;
 import fr.adaming.model.Order;
 
+@Stateful
 public class OrderServiceImpl implements IOrderService {
 
 	@EJB
