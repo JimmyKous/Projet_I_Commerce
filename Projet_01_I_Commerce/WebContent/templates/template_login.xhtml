@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="htpp://primefaces.org/ui">
+
+<h:head>
+	<title>Facelet login</title>
+</h:head>
+
+<h:body>
+<ui:composition>
+	<h:outputStylesheet library="css" name="login.css" />
+	<h:form styleClass="body">
+		<h:outputStylesheet library="css" name="login.css" />
+		<div class="login">
+			Login
+			<h:inputText value="#{csMB.conseiller.mail}" />
+		</div>
+		<div class="mdp">
+			Password
+			<h:inputSecret value="#{csMB.conseiller.mdp}" />
+		</div>
+		<div class="button">
+			<h:commandButton value="se connecter" action="#{csMB.seConnecter}"></h:commandButton>
+		</div>
+	</h:form>F
+	</ui:composition>
+</h:body>
+</html>

@@ -8,33 +8,12 @@
 <h:head>
 	<title>Facelet accueil</title>
 </h:head>
-<h:body>
-	<p:megaMenu orientation="#{megaMenuView.orientation}"
-		style="margin-top:20px">
-		<p:menuitem value="Accueil" url="#" icon="fa-navicon" />
-		<p:submenu label="Catégories" icon="pi pi-check">
-			<p:column>
-				<p:submenu label="Boards">
-					<p:menuitem value="Fish" url="#" />
-					<p:menuitem value="Longboards" url="#" />
-					<p:menuitem value="Shortboards" url="#" />
-				</p:submenu>
-				<p:submenu label="Surfwear">
-					<p:menuitem value="Wetsuits" url="#" />
-					<p:menuitem value="Boardshorts" url="#" />
-				</p:submenu>
-				<p:submenu label="Accesoires">
-					<p:menuitem value="Divers" url="#" />
-				</p:submenu>
-			</p:column>
-		</p:submenu>
+<h:body >
+<div>
+<ui:insert>
+<ui:include src="/templates/template_homePage.xhtml"></ui:include>
+</ui:insert>
+</div>
 
-		<f:facet name="options">
-			<p:inputText placeholder="Rechercher" />
-
-		</f:facet>
-		<p:menuitem value="Se connecter" url="login.xhtml" icon="fa-navicon"
-			style="margin-right"/>
-	</p:megaMenu>
 </h:body>
 </html>

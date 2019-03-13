@@ -1,0 +1,31 @@
+body {
+	background-image: url("../resources/Images/barrel2.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	z-index: auto;
+}
+
+.login {
+	font-family: fantasy;
+	text-align: center;
+	margin-top: 150px;
+	margin-bottom: auto;
+	padding-top: 25px;
+}
+
+.mdp {
+	font-family: fantasy;
+margin-left :450pt;
+
+	margin-top: 50px;
+	margin-bottom: auto;
+	padding-bottom: 25px;
+}
+
+.button {
+	font-family: fantasy;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: auto;
+	padding-bottom: 25px;
+}

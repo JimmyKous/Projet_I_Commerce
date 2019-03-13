@@ -11,13 +11,10 @@
 </h:head>
 
 <h:body>
-	<h:form>
-Login: <h:inputText value="#{aMB.formateur.mail}" />
-		<br />
-Mot de Passe <h:inputSecret value="#{aMB.admin.pw}" />
-		<br />
-		<h:commandButton value="se connecter" action="#{aMB.seConnecter}"></h:commandButton>
-		<h:messages style="color:red;text-align:center" />
-	</h:form>
+	<div>
+<ui:insert>
+<ui:include src="/templates/template_login.xhtml"></ui:include>
+</ui:insert>
+</div>
 </h:body>
 </html>
