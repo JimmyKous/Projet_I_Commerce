@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Facelet accueil</title>
+	
+</h:head>
+
+<h:body id="body "> 
+<h:outputStylesheet library="css" name="homePage_template.css"/>
+<ui:composition>
+
+	<p:megaMenu orientation="#{megaMenuView.orientation}"
+		style="margin-top:20px">
+		<p:menuitem value="Accueil" url="#" icon="fa-navicon" />
+		<p:submenu label="Catégories" icon="pi pi-check">
+			<p:column>
+				<p:submenu label="Boards">
+					<p:menuitem value="Fish" url="#" />
+					<p:menuitem value="Longboards" url="#" />
+					<p:menuitem value="Shortboards" url="#" />
+				</p:submenu>
+				<p:submenu label="Surfwear">
+					<p:menuitem value="Wetsuits" url="#" />
+					<p:menuitem value="Boardshorts" url="#" />
+				</p:submenu>
+				<p:submenu label="Accesoires">
+					<p:menuitem value="Divers" url="#" />
+				</p:submenu>
+			</p:column>
+		</p:submenu>
+
+		<f:facet name="options">
+			<p:inputText placeholder="Rechercher" />
+
+		</f:facet>
+		<p:menuitem value="Se connecter" url="login.xhtml" icon="fa-navicon"
+			style="margin-right"/>
+	</p:megaMenu>
+	</ui:composition>
+</h:body>
+</html>
