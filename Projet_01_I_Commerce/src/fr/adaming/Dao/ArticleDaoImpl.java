@@ -45,8 +45,16 @@ public class ArticleDaoImpl implements IArticleDao {
 
 	@Override
 	public int deleteArticle(Article a) {
-		// TODO Auto-generated method stub
-		return 0;
+		// JPQL Request
+		String req = "DELETE Article AS a WHERE a.idArt=:pIdArt ";
+		
+		// Instantiate Query Object
+		Query query = em.createQuery(req);
+		
+		// Parameters
+		query.setParameter("pIdArt", a.getIdArt());
+		
+		return query.executeUpdate();
 	}
 
 }
