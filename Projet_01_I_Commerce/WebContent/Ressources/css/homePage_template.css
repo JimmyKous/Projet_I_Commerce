@@ -1,4 +1,6 @@
-body{
-	background-image: "/Ressources/Images/chicamaLineUp.jpg";
+#body{
+	background-image: url("../Images/chicamaLineUp.jpg");
 	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
 }
