@@ -7,8 +7,11 @@
 
 <h:head>
 	<title>Facelet accueil</title>
+	<h:outputStylesheet library="css" name="homePage_template.css"/>
 </h:head>
 <h:body>
+
+<ui:composition>
 	<p:megaMenu orientation="#{megaMenuView.orientation}"
 		style="margin-top:20px">
 		<p:menuitem value="Accueil" url="#" icon="fa-navicon" />
@@ -36,5 +39,6 @@
 		<p:menuitem value="Se connecter" url="login.xhtml" icon="fa-navicon"
 			style="margin-right"/>
 	</p:megaMenu>
+	</ui:composition>
 </h:body>
 </html>
