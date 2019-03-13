@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import fr.adaming.model.Category;
 import fr.adaming.model.Customer;
 
 public class CustomerDaoImpl implements ICustomerDao {

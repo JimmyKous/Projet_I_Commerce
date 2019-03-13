@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import fr.adaming.model.Admin;
 import fr.adaming.model.Article;
 import fr.adaming.model.Category;
 
