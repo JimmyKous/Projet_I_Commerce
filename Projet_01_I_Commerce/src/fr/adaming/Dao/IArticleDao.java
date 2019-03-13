@@ -1,6 +1,9 @@
 package fr.adaming.Dao;
 
+import java.util.List;
+
 import fr.adaming.model.Article;
+import fr.adaming.model.Category;
 
 public interface IArticleDao {
 
@@ -12,4 +15,7 @@ public interface IArticleDao {
 	
 	public int deleteArticle(Article a);
 	
+	public List<Article> getAllArticleFromCategory(Category c);
+	
+	public List<Article> getAllArticle();
 }

@@ -1,9 +1,12 @@
 package fr.adaming.Dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import fr.adaming.model.Article;
 import fr.adaming.model.Category;
 
 public class CategoryDaoImpl implements ICategoryDao {
@@ -21,7 +24,15 @@ public class CategoryDaoImpl implements ICategoryDao {
 
 	@Override
 	public Category getCategory(Category c) {
-		return em.find(Category.class, c);
+		
+		try {
+			
+			return em.find(Category.class, c);
+		
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override
@@ -37,7 +48,14 @@ public class CategoryDaoImpl implements ICategoryDao {
 		query.setParameter("pCategoryName", c.getCategoryName());
 		query.setParameter("pDescription", c.getDescription());
 		
-		return query.executeUpdate();
+		try {
+			
+			return query.executeUpdate();
+		
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return 0;
 	}
 
 	@Override
@@ -51,7 +69,33 @@ public class CategoryDaoImpl implements ICategoryDao {
 		// Parameters
 		query.setParameter("pIdCat", c.getIdCat());
 		
-		return query.executeUpdate();
+		try {
+			
+			return query.executeUpdate();
+		
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return 0;
+	}
+
+	@Override
+	public List<Category> getAllCategory() {
+		// JPQL Request
+		String req = "SELECT c FROM Category AS c";
+		
+		// Instantiate Query Object
+		Query query = em.createQuery(req);
+		
+		try{
+			@SuppressWarnings("unchecked")
+			List<Category> category = query.getResultList();
+			return category ;
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return null;
+			
 	}
 
 }

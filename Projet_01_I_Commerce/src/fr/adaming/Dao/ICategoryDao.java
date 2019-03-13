@@ -1,5 +1,7 @@
 package fr.adaming.Dao;
 
+import java.util.List;
+
 import fr.adaming.model.Category;
 
 public interface ICategoryDao {
@@ -11,5 +13,7 @@ public interface ICategoryDao {
 	public int updateCategory(Category c);
 	
 	public int deleteCategory(Category c);
+	
+	public List<Category> getAllCategory();
 
 }

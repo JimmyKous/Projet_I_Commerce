@@ -1,10 +1,10 @@
-package fr.adaming.Dao;
+package fr.adaming.Service;
 
 import java.util.List;
 
 import fr.adaming.model.Order;
 
-public interface IOrderDao {
+public interface IOrderService {
 
 	public Order addOrder(Order o);
 	

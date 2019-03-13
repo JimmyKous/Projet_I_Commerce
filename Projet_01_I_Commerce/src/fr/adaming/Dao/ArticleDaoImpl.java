@@ -1,10 +1,14 @@
 package fr.adaming.Dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import fr.adaming.model.Admin;
 import fr.adaming.model.Article;
+import fr.adaming.model.Category;
 
 public class ArticleDaoImpl implements IArticleDao {
 
@@ -20,8 +24,17 @@ public class ArticleDaoImpl implements IArticleDao {
 
 	@Override
 	public Article getArticle(Article a) {
-		return em.find(Article.class, a);
+		
+		try {
+			
+			return em.find(Article.class, a);
+		
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return null;
 	}
+	
 
 	@Override
 	public int updateArticle(Article a) {
@@ -40,7 +53,14 @@ public class ArticleDaoImpl implements IArticleDao {
 		query.setParameter("pPicture", a.getPicture());
 		query.setParameter("pIdArt", a.getIdArt());
 		
-		return query.executeUpdate();
+		try {
+			
+			return query.executeUpdate();
+		
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return 0;
 	}
 
 	@Override
@@ -54,7 +74,53 @@ public class ArticleDaoImpl implements IArticleDao {
 		// Parameters
 		query.setParameter("pIdArt", a.getIdArt());
 		
-		return query.executeUpdate();
+		try {
+			
+			return query.executeUpdate();
+		
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return 0;
+	}
+
+	@Override
+	public List<Article> getAllArticleFromCategory(Category c) {
+		// JPQL Request
+		String req = "SELECT a FROM Article AS a WHERE category=:pCategory";
+		
+		// Instantiate Query Object
+		Query query = em.createQuery(req);
+		
+		// Parameter
+		query.setParameter("pCategory", c);
+		
+		try{
+			@SuppressWarnings("unchecked")
+			List<Article> articles = query.getResultList();
+			return articles ;
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Article> getAllArticle() {
+		// JPQL Request
+		String req = "SELECT a FROM Article AS a";
+		
+		// Instantiate Query Object
+		Query query = em.createQuery(req);
+		
+		try{
+			@SuppressWarnings("unchecked")
+			List<Article> articles = query.getResultList();
+			return articles ;
+		} catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return null;
 	}
 
 }
