@@ -8,6 +8,7 @@ import fr.adaming.model.Admin;
 
 public class AdminDaoImpl implements IAdminDao{
 
+	
 		// This annotation allows to inject an EntityManager instantiated by EJB Container
 		@PersistenceContext(unitName="PU_I_Commerce")
 		private EntityManager em;
