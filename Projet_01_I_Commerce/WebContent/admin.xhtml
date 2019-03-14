@@ -6,21 +6,11 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<title>Facelet accueil</title>
+	<title>Admin Control</title>
 </h:head>
 <h:body>
-	<p:megaMenu orientation="#{megaMenuView.orientation}"
-		style="margin-top:20px">
-		<p:menuitem value="Ajouter articles" url="#"/>
-		<p:menuitem value="Modifier articles" url="#"/>
-		<p:menuitem value="Supprimer articles" url="#"/>
-		
-		<f:facet name="options">
-			<p:inputText placeholder="Rechercher" />
-
-		</f:facet>
-		<p:menuitem value="Se déconnecter" url="Accueil.xhtml" icon="fa-navicon"
-			style="margin-right" />
-	</p:megaMenu>
+<ui:insert>
+<ui:include src="/templates/template_menubaradmin.xhtml"></ui:include>
+</ui:insert>
 </h:body>
 </html>
