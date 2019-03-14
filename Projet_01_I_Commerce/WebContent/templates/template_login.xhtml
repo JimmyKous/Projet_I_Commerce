@@ -19,24 +19,24 @@
 	<link rel="stylesheet"
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
 	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
 	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"/>
 		<h:outputStylesheet library="css" name="login.css" />
 		<div class="container">
-			<h:form styleClass="body">
-				<h:outputStylesheet library="css" name="login.css" />
+			<h:form styleClass="body" >
 				<div class="login">Login</div>
-				<div class="inputText">
-					<h:inputText value="#{adMB.admin.mail}" />
+				<div class="login">
+					<h:inputText styleClass="inputText" value="#{adMB.admin.mail}" />
 				</div>
-				<div class="mdp">Password</div>
-				<div class="inputText">
-					<h:inputSecret value="#{adMB.admin.pw}" />
+				<div class="login">Password</div>
+				<div class="login" >
+					<h:inputSecret styleClass="inputText" value="#{adMB.admin.pw}" />
 				</div>
-				<div class="button">
-				<span><button type="button" class="btn btn-success" value="#{adMB.logIn}">Se connecter</button></span>
+				<div class="login">
+				<h:commandButton value="Login" style="font-size:20pt" class="btn btn-success" action="#{adMB.logAdmin}"/>
 				</div>
+				<h4 style="color:white;"><h:messages/></h4>
 			</h:form>
 		</div>
 	</ui:composition>

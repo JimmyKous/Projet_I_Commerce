@@ -8,48 +8,24 @@ body {
 	margin : auto;
 	margin-top: 180px;
 	background-color: rgba(128, 128, 128, 0.7);	
-	width: 100px;
-	height:220px;
+	max-width: 430px;
+	height:310px;
 	border-radius: 25px;
 }
 .login {
-	
 	font-family: fantasy;
 	font-size:20pt;
 	text-align: center;
-/* 	margin-top: 25px; */
-/* 	margin-bottom: auto; */
 	padding-top: 10px;
 	z-index: 2;
 }
 .inputText {
 	font-family: fantasy;
 	text-align: center;
-/* 	margin-top: 25px; */
-/* 	margin-bottom: auto; */
-	padding-bottom: 10px;
+	width: 330px;
+	padding-bottom: 5px;
 }
-.mdp {
-	font-family: fantasy;
-	text-align: center;
-	font-size:20pt;
-/* 	margin-top: 25px; */
-/* 	margin-bottom: auto; */
-/* 	padding-top: 2px; */
-}
-.btn btn-success{
-	width: 100px;
-	margin: 0px;
-	
-}
-
-.button {
-	
-	font-family: fantasy;
-	text-align: center;
-	width: 100px;
-	border-radius: 10px;
-/* 	margin-top: 50px; */
-/* 	margin-bottom: auto; */
-	padding-top: 10px;
+.btn{
+	max-width: 100px;
+	margin: 0px;	
 }

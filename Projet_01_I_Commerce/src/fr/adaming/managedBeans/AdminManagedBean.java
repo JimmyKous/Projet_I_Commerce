@@ -42,10 +42,11 @@ public class AdminManagedBean {
 	}
 
 	// Work Methods
-	public String logIn(){
+	public String logAdmin() {
 		
 		// Get Formateur with Mail and Pass
 		Admin adOut = adService.isExist(admin);
+		System.out.println("SHLAGOS");
 		
 		if (adOut!=null){
 			
