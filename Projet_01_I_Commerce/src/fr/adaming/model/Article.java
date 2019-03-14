@@ -6,9 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="articles")
@@ -32,8 +34,13 @@ public class Article {
 	@Column(name="stock_art")
 	private String stock;
 	
+	
 	@Column(name="picture_art")
+	@Lob
 	private byte[] picture;
+	
+	@Transient
+	private String img;
 	
 	// Transform UML to Java Association
 	@ManyToOne
@@ -132,6 +139,14 @@ public class Article {
 
 	public void setOrderLine(OrderLine orderLine) {
 		this.orderLine = orderLine;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 }

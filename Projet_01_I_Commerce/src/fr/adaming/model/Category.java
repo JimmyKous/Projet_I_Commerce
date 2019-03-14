@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="categories")
@@ -27,6 +28,9 @@ public class Category {
 	
 	@Column(name="description_cat")
 	private String description;
+	
+	@Transient
+	private String img;
 	
 	// Transform UML to Java Association
 	@OneToMany(mappedBy="category", cascade={CascadeType.REMOVE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
@@ -81,6 +85,14 @@ public class Category {
 
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 }
