@@ -1,5 +1,7 @@
 package fr.adaming.Service;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
 
@@ -32,6 +34,11 @@ public class CategoryServiceImpl implements ICategoryService {
 	@Override
 	public int deleteCategory(Category c) {
 		return catDao.deleteCategory(c);
+	}
+
+	@Override
+	public List<Category> getAllCategory() {
+		return catDao.getAllCategory();
 	}
 
 	

@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.apache.commons.codec.binary.Base64;
+
 import fr.adaming.model.Category;
 
 @Stateless
@@ -90,6 +92,9 @@ public class CategoryDaoImpl implements ICategoryDao {
 		try{
 			@SuppressWarnings("unchecked")
 			List<Category> category = query.getResultList();
+			for (Category c: category){
+				c.setImg("data:image/png;base64,"+Base64.encodeBase64String(c.getPicture()));
+			}
 			return category ;
 		} catch (Exception ex){
 			ex.printStackTrace();

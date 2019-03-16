@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -29,6 +30,9 @@ public class Category {
 	@Column(name="description_cat")
 	private String description;
 	
+	@Lob
+	private byte[] picture;
+	
 	@Transient
 	private String img;
 	
@@ -41,17 +45,24 @@ public class Category {
 		super();
 	}
 
-	public Category(String categoryName, String description) {
+	public Category(String categoryName, String description, byte[] picture, String img, List<Article> articles) {
 		super();
 		this.categoryName = categoryName;
 		this.description = description;
+		this.picture = picture;
+		this.img = img;
+		this.articles = articles;
 	}
 
-	public Category(int idCat, String categoryName, String description) {
+	public Category(int idCat, String categoryName, String description, byte[] picture, String img,
+			List<Article> articles) {
 		super();
 		this.idCat = idCat;
 		this.categoryName = categoryName;
 		this.description = description;
+		this.picture = picture;
+		this.img = img;
+		this.articles = articles;
 	}
 
 	// Getters & Setters
@@ -79,12 +90,12 @@ public class Category {
 		this.description = description;
 	}
 
-	public List<Article> getArticles() {
-		return articles;
+	public byte[] getPicture() {
+		return picture;
 	}
 
-	public void setArticles(List<Article> articles) {
-		this.articles = articles;
+	public void setPicture(byte[] picture) {
+		this.picture = picture;
 	}
 
 	public String getImg() {
@@ -94,6 +105,13 @@ public class Category {
 	public void setImg(String img) {
 		this.img = img;
 	}
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 	
 }
-	

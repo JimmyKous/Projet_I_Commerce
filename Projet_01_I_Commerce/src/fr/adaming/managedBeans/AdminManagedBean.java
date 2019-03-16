@@ -19,12 +19,6 @@ public class AdminManagedBean {
 	@EJB
 	private IAdminService adService;
 	
-	@EJB
-	private IArticleService artService;
-	
-	@EJB
-	private ICategoryService catService;
-	
 	// Attributes
 	private Admin admin;
 	
@@ -46,7 +40,6 @@ public class AdminManagedBean {
 		
 		// Get Formateur with Mail and Pass
 		Admin adOut = adService.isExist(admin);
-		System.out.println("SHLAGOS");
 		
 		if (adOut!=null){
 			
