@@ -82,7 +82,7 @@ public class CategoryManagedBean {
 
 			// Calling same page
 			return "addCategory";
-		}/
+		}
 
 	}
 
