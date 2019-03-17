@@ -56,6 +56,14 @@ public class CategoryManagedBean {
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
 	}
+	
+	public UploadedFile getImage() {
+		return image;
+	}
+
+	public void setImage(UploadedFile image) {
+		this.image = image;
+	}
 
 	// Work Methods
 	public String addCategory() {

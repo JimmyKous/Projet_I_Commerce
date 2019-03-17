@@ -90,7 +90,6 @@ public class CategoryDaoImpl implements ICategoryDao {
 		Query query = em.createQuery(req);
 		
 		try{
-			@SuppressWarnings("unchecked")
 			List<Category> category = query.getResultList();
 			for (Category c: category){
 				c.setImg("data:image/png;base64,"+Base64.encodeBase64String(c.getPicture()));
